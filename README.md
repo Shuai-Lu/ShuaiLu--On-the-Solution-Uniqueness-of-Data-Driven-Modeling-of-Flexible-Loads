@@ -1,7 +1,6 @@
 # On the Identification of Generalized Flexible Load
 
 
-
 ## Description
 * main.m: start from this file.
 
@@ -14,9 +13,8 @@
 * plot_fig2.m: This script plots the feasible region of the aggregated power of $Ω_{phy}$ under different numbers of virtual batteries.
 
 ## Authors
-
-- Jiayi Ding, School of Electrical Engineering, Southeast University, Nanjing
-- Shuai Lu, School of Electrical Engineering, Southeast University, Nanjing
+- Jiayi Ding, School of Electrical Engineering, Southeast University, Nanjing, China
+- Shuai Lu, School of Electrical Engineering, Southeast University, Nanjing, China
 
 
 ## Usage
@@ -24,7 +22,6 @@
 
 
 ## Dependencies
-
 - MATLAB
 - YALMIP toolbox
 - Gurobi solver
@@ -32,6 +29,5 @@
 
 
 ## Note
-
 - To reproduce the results presented in an associated paper, set `filename` to `'random_price_benchmark.mat'` in "generate_data.m".
 
