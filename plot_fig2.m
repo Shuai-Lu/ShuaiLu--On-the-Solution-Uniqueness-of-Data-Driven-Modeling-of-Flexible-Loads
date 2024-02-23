@@ -1,5 +1,5 @@
 %% plot Ωphy under different numbers of virtual battery
-% dependencies: Yalmip, MPT3 v3.2.1
+%  dependencies: Yalmip, MPT3 v3.2.1
 %  2024-02-21
 %  By Jiayi Ding & Shuai Lu
 
