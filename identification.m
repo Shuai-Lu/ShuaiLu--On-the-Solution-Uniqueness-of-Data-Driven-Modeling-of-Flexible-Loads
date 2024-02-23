@@ -1,4 +1,5 @@
 %% identify the Physics-Based Model
+%  dependencies: Yalmip, Gurobi
 %  2024-02-21
 %  By Jiayi Ding & Shuai Lu
 
@@ -35,19 +36,14 @@ model.para.P_agg = data.dataset.P_agg(1:model.settings.num_sample, :);
 model.para.num_period = data.para.num_period;
 
 % Paramteres of virtual battery
-model.para.vb.sigma(:, 1) = [1; 0.95]; % the length need to be equal to num_vb
+model.para.vb.sigma(:, 1) = [1; 1]; % the length need to be equal to num_vb
 model.para.vb.Gamma = zeros(data.para.num_period, data.para.num_period, model.para.num_vb);
-
 for n = 1:model.para.num_vb
-
     for i = 1:data.para.num_period
-
         for j = 1:i
             model.para.vb.Gamma(i, j, n) = model.para.vb.sigma(n) ^ (i - j);
         end
-
     end
-
 end
 
 fprintf('%s\n', '- Model the forward problem ...');
@@ -166,9 +162,7 @@ model.inverseproblem.var.dual_ineq_binary = binvar(num_dual_ineq, 1, model.setti
 
 % % link paramters
 id_f_sdpvar = [];
-
 for i = 1:size(model.details.f, 1)
-
     if isa(model.details.f(i), 'sdpvar')
         id_f_sdpvar = [id_f_sdpvar; i];
     end

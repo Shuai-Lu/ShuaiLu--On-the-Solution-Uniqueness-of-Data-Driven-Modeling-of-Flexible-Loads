@@ -25,7 +25,7 @@
 - MATLAB
 - YALMIP toolbox
 - Gurobi solver
-- Analyze N-dimensional Convex Polyhedra (Version 1.9.0.2 by Matt J)
+- Multi-Parametric Toolbox 3 (MPT3)
 
 
 ## Note

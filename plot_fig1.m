@@ -1,5 +1,6 @@
 %% plot Conv(Gamma) and D under different number of samples
-%  2024-02-21
+% dependencies: Yalmip
+% 2024-02-21
 %  By Jiayi Ding & Shuai Lu
 
 %% Initialize
@@ -18,7 +19,7 @@ h_axis = gca;              % gca: get current axis
 
 %% set position & color
 % position, color,
-left = 10; bottom = 5; width = 20; height = 18;
+left = 10; bottom = 0; width = 20; height = 18;
 % units:inches|centimeters|normalized|points|{pixels}|characters
 set(h_fig, 'Units','centimeters', 'position', [left, bottom, width, height], 'color', 'w');
 
@@ -101,9 +102,9 @@ set(h_axis, 'YTick', -200:200:800);                     % or xticks();
 
 %% lengend
 legend1 = legend([legend_1_2,legend_1_3,legend_2_2,legend_2_3,legend_3_2,legend_3_3], ...
-    '$\rm{Conv}(\Gamma) (|\rm{K}|=20)$','$\partial D (|\rm{K}|=20)$', ...
-    '$\rm{Conv}(\Gamma) (|\rm{K}|=50)$','$\partial D (|\rm{K}|=50)$', ...
-    '$\rm{Conv}(\Gamma) (|\rm{K}|=200)$','$\partial D (|\rm{K}|=200)$', ...
+    '$\ \rm{Conv}(\Gamma) (|\rm{K}|=20)$','$\ \partial \Pi (|\rm{K}|=20)$', ...
+    '$\ \rm{Conv}(\Gamma) (|\rm{K}|=50)$','$\ \partial \Pi (|\rm{K}|=50)$', ...
+    '$\ \rm{Conv}(\Gamma) (|\rm{K}|=200)$','$\ \partial \Pi (|\rm{K}|=200)$', ...
     'Orientation','horizontal','NumColumns',2, ...
     'Interpreter','latex');
 
