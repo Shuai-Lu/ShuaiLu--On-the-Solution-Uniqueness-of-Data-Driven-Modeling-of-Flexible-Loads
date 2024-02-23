@@ -9,7 +9,7 @@ warning off;
 yalmip('clear');
 
 %% set num_vb
-num_vb = 1;
+num_vb = 1; % set to 1 for Fig.1(a) and 2 for Fig.1(b)
 
 %% load data
 filepath = [cd '\data\data.mat'];
@@ -26,7 +26,7 @@ CodeTime.Overall = tic; % start stopwatch timer
 update_random = 0;
 
 %% Param Settings
-model.settings.num_sample = 50; % this para can be set
+model.settings.num_sample = 50; % this parameter can be adjusted
 model.settings.big_M = 1e3;
 model.para.num_fixedload = 1;
 model.para.num_adjload = 1;
@@ -36,7 +36,7 @@ model.para.P_agg = data.dataset.P_agg(1:model.settings.num_sample, :);
 model.para.num_period = data.para.num_period;
 
 % Paramteres of virtual battery
-model.para.vb.sigma(:, 1) = [1; 1]; % the length need to be equal to num_vb
+model.para.vb.sigma(:, 1) = [1; 0.95]; % the length need to be equal to num_vb
 model.para.vb.Gamma = zeros(data.para.num_period, data.para.num_period, model.para.num_vb);
 for n = 1:model.para.num_vb
     for i = 1:data.para.num_period
