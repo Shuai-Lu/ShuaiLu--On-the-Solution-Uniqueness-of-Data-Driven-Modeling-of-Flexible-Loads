@@ -8,9 +8,9 @@
 
 * identification.m: This script identifies a physics-based generalized flexible model, including the forward problem modeling, the derivation of the concise form using KKT conditions, and the inverse optimization problem solution.
 
-* plot_fig1.m: This script visualizes the convex hull of Γ (Conv(Γ)) and the set D under different numbers of samples.
+* plot_fig1.m: This script visualizes the convex hull of $\Gamma$ (i.e., $\rm Conv(\Gamma)$) and the set $\Pi$ under different numbers of samples.
 
-* plot_fig2.m: This script plots the feasible region of the aggregated power of $Ω_{phy}$ under different numbers of virtual batteries.
+* plot_fig2.m: This script plots the feasible region of the aggregated power of $\rm{Ω}_{\rm phy}$ under different numbers of virtual batteries.
 
 ## Authors
 - Jiayi Ding, School of Electrical Engineering, Southeast University, Nanjing, China

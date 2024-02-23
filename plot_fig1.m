@@ -1,4 +1,4 @@
-%% plot Conv(Gamma) and D under different number of samples
+%% plot Conv(Gamma) and Pi under different number of samples
 % dependencies: Yalmip
 % 2024-02-21
 %  By Jiayi Ding & Shuai Lu
@@ -38,13 +38,13 @@ legend_1_2 = fill(data.P(k, 1), data.P(k,2), [0 0 0]);
 set(legend_1_2,'edgealpha',0,'facealpha',0.2);
 hold on;
 
-% % plot D
-D = sdpvar(2, 1);
-Constraints_D = [];
-Constraints_D = Constraints_D + ( ...
-    data.price(k, 1:2)*D >= ...
+% % plot Pi
+Pi = sdpvar(2, 1);
+Cons_Pi = [];
+Cons_Pi = Cons_Pi + ( ...
+    data.price(k, 1:2)*Pi >= ...
     sum(data.price(k, 1:2).*data.dataset.P_agg(k, 1:2),2));
-v = vertex(Constraints_D,D);
+v = vertex(Cons_Pi,Pi);
 [k,av] = convhull(v');
 legend_1_3 = plot(v(1,k),v(2,k), 'LineWidth',5,'LineStyle',':','Color',[0 0 0]);
 hold on;
@@ -61,13 +61,13 @@ legend_2_2 = fill(data.P(k, 1), data.P(k,2), [0 0.4 1]);
 hold on;
 set(legend_2_2,'edgealpha',0,'facealpha',0.2);
 
-% % plot D
-D = sdpvar(2, 1);
-Constraints_D = [];
-Constraints_D = Constraints_D + (...
-    data.price(k, 1:2)*D >= ...
+% % plot Pi
+Pi = sdpvar(2, 1);
+Cons_Pi = [];
+Cons_Pi = Cons_Pi + (...
+    data.price(k, 1:2)*Pi >= ...
     sum(data.price(k, 1:2).*data.dataset.P_agg(k, 1:2),2));
-v = vertex(Constraints_D,D);
+v = vertex(Cons_Pi,Pi);
 [k,av] = convhull(v');
 legend_2_3 = plot(v(1,k),v(2,k), 'LineWidth',3,'LineStyle','-.','Color',[0 0 1]);
 hold on;
@@ -84,13 +84,13 @@ legend_3_2 = fill(data.P(k, 1), data.P(k,2), [1 0 0]);
 hold on;
 set(legend_3_2,'edgealpha',0,'facealpha',0.2);
 
-% % plot D
-D = sdpvar(2, 1);
-Constraints_D = [];
-Constraints_D = Constraints_D + (...
-    data.price(k, 1:2)*D >= ...
+% % plot Pi
+Pi = sdpvar(2, 1);
+Cons_Pi = [];
+Cons_Pi = Cons_Pi + (...
+    data.price(k, 1:2)*Pi >= ...
     sum(data.price(k, 1:2).*data.dataset.P_agg(k, 1:2),2));
-v = vertex(Constraints_D,D);
+v = vertex(Cons_Pi,Pi);
 [k,av] = convhull(v');
 legend_3_3 = plot(v(1,k),v(2,k), 'LineWidth',1,'LineStyle','--','Color',[1 0 0]);
 hold on;

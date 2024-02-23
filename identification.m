@@ -9,7 +9,7 @@ warning off;
 yalmip('clear');
 
 %% set num_vb
-num_vb = 2;
+num_vb = 1;
 
 %% load data
 filepath = [cd '\data\data.mat'];
