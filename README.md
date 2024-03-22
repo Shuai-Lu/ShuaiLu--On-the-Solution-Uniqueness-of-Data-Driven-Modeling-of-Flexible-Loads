@@ -1,4 +1,4 @@
-# On the Identification of Generalized Flexible Load
+# On the Solution Uniqueness of Data-Driven Modeling of Flexible Loads
 
 
 ## Description
