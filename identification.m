@@ -9,7 +9,7 @@ warning off;
 yalmip('clear');
 
 %% set num_vb
-num_vb = 1; % set to 1 for Fig.1(a) and 2 for Fig.1(b)
+num_vb = 1; % set to 1 for Ωphy^1 and 2 for Ωphy^2
 
 %% load data
 filepath = [cd '\data\data.mat'];
